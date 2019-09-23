@@ -62,9 +62,10 @@ function reduce(array, f, acc) {
 //wordLetters("hello its me") // ["o","s","e"]
 
 function wordLetters(str) {
-    // TODO: your code here 
+ // var MylastLetter= "";
+  let arr= str.split("");                         // to cut the sentence to the word 
+   return arr.map(x=>x[split("").length-1])       // to get the last caracher forom word using length-1
 }
-
 //=============================================================================
 /*                                  Q2                                    */
 //=============================================================================
@@ -76,7 +77,11 @@ isPresent('efghi', 'a') // => false
 */
 
 function isPresent(string, target) {
-  // TODO: your code here 
+//return boolean value 
+//return string.include(target);
+let arr = string.split(""); // cut string 
+let isIclude = filter(arr,x=>x==target) //  string == target 
+return isIclude.length > 0 ? true: false //  string == target == true else false
 }
 
 
@@ -89,7 +94,10 @@ function isPresent(string, target) {
 // wordsLongerThanFive("Hello Mad World") //["Hello", "World"]
 
 function wordsLongerThanFive(str) {
-    // TODO: your code here 
+  // return word with 5 letter or more
+  let arr = str.split("");
+  return filter(arr,x=>x.length>=5)
+  
 }
 
 //=============================================================================
@@ -104,7 +112,8 @@ powerOfTwo(16); // true
 powerOfTwo(10); // false
 */
 function powerOfTwo(number) { 
- // TODO: your code here 
+ return number ==1 ?true :(number <1 ?false :ispowerOfTwo(number/2))
+ 
 } 
  
 
@@ -134,9 +143,45 @@ function powerOfTwo(number) {
 // pizza.eatSlice();
 
 // Write your code here .....
+function  makePizza(crust,size,numberOfSlice){
+this.crust=crust;
+this.size= size;
+this.numberOfSlice=numberOfSlice;7
+this.ingredients='';
+return{
+  addIngredients=funcation(ingredients)
+  {
+  this.ingredients=ingredients+','+ingredients
+},
+
+  displayIngredients:function()
+  {
+    return this.ingredients
+  },
+
+    bakePizza():funcation({
+      setTimeout(() => 'Your'+ this.crust + ''+ this.size + 'Slice pizza is Done :)
+    },
+
+      eatSlice:funcation(){ 
+        if(this.numberOfSlice >0){
+          this.numberOfSlice--;
+          return'You can eat a pizaa ! '}
+          else{
+            return'You cant eat a pizaa ! '
+        }
+        
+      
+  }
+
+
+
+
+
 
 //=============================================================================
 /*                                  Q6                                      */
+
 //=============================================================================
 /*
 Create a Circle class by using OOP concept, where:
@@ -155,6 +200,30 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 */
 
 //  Write your code here
+
+class Circle{
+  constructor(radius){
+    this.radius=radius;
+  }
+    increaseRadius(n){
+      this.radius=radius*n;
+    
+    }
+    circlePerimeter(){
+      return  Math.PI * this.radius*2;
+    }
+    circleArea(){
+       return this.radius* Math.PI * this.radius;
+    }
+  }
+  var circle1= new Circle(10);
+  var circle2= new Circle(20);
+  function displayCircles(arr){
+
+  }
+
+
+
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
 
@@ -177,6 +246,33 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 //  safe('money','small') => "watch gold-bar money"
 
 // Write your code here .....
+function makeSafe(num){
+  this.storagesize = num;
+  this.term= '';
+  return(
+    function(item,itemSize)
+    {
+
+      if(itemSize > this.storagesize){
+        return " cant fit it"}else{
+          if(itemSize === 'big'){
+
+            this.storagesize = -2; 
+          }elseif(itemSize === 'medium'){
+            this.storagesize = -3; 
+
+          }
+        }elseif(itemSize === 'small'){
+          this.storagesize = -1; 
+
+        }  
+
+        }
+        
+  
+  )}
+
+      }
 
 //=============================================================================
 /*                                  Q8                                       */
@@ -226,13 +322,16 @@ Note: Write the function using while loop and for loop.
 //================================================================================
 // Theoretical questions.
 // 1- In your own words,Why do we use Closures ?
+using as when we the inteanal funcation is made a variable to ant scooe out the side of other funcation 
 
 // 2- In OOP, what does "this" refer to ?
-
+OOP object orientet  programming
+this => it refer in Reference object to the current object and using it to invoke the current class that it built / pass as argument
 // 3- What is jQuery?
+its is a libary in js , that can i witer less coda and doing more /cross paltform
 
 // 4- what is the diffrence between Closure's methods and The OOP's methods?
-
+in oop it have a lot of emphasis is placed on the object it self so the method are apar of it but
 
 
 
